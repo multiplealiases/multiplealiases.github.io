@@ -7,8 +7,6 @@ params:
 permalink: /technicaly-installing-gentoo-on-rooted-android.html
 ---
 
-# (Technically) installing Gentoo on a rooted Android phone
-
 It's possible, but why would you? It's just a normal Gentoo install, but worse.
 This is Diogenes holding up a de-feathered chicken and claiming "behold, a man!".
 

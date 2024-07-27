@@ -97,7 +97,7 @@ CMake Error at CMakeLists.txt:93 (message):
   The C++ compiler does not support C++11 (e.g.  std::unique_ptr).
 ```
 
-mount a tmpfs on `/var/tmp` by running `mount -t tmpfs -o size=16G /var/tmp`.
+mount a tmpfs on `/var/tmp` by running `mount -t tmpfs vartmp -o size=16G /var/tmp`.
 
 For reasons I can't comprehend, I think it might actually be
 poking at the filesystem it's building on for this test.

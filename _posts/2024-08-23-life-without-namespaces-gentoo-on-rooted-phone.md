@@ -91,7 +91,7 @@ checkmount() {
     src="$1"
     dst="$2"
     shift 2
-    if ! findmnt -M "$dst"
+    if ! 2>&1 1>/dev/null findmnt -M "$dst"
     then
         mount "$src" "$dst" "$@"
     fi

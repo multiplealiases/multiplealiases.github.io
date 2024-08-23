@@ -221,8 +221,9 @@ if sudo $PREFIX/bin/gentoo-prefix-chroot /sbin/openrc sysinit
 then
         printf 'Prefix at %s "booted".\n' "$prefix"
         sleep infinity
-fi
+else
         die 'Prefix at %s failed to "boot".\n' "$prefix"
+fi
 ```
 
 `mkdir -p $PREFIX/var/service/gentoo-prefix-init/`, copy this script to

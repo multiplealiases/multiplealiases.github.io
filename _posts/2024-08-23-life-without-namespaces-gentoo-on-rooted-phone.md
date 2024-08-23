@@ -226,7 +226,7 @@ fi
 ```
 
 `mkdir -p $PREFIX/var/service/gentoo-prefix-init/`, copy this script to
-`$PREFIX/var/services/gentoo-prefix-init/run`, and mark it executable.
+`$PREFIX/var/service/gentoo-prefix-init/run`, and mark it executable.
 
 Don't enable it quite yet, we'll need the most scuffed possible `finish` script
 for it. Place this in `$PREFIX/var/service/gentoo-prefix-init/finish`.

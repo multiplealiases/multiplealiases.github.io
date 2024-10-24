@@ -139,6 +139,10 @@ since it's not possible for `mpv` to ask the remote machine to encode
 '*that* part' of the file again in the event the user seeks to a
 position in the file that's no longer in cache.
 
+I realize what I'm asking for is close to what Plex does,
+but I'd like one that wasn't a do-it-all solution with media cataloging,
+and closer to a minimalist remote video streaming app.
+
 # Footnotes
 
 [^1]: Notice the lack of an `-f`!

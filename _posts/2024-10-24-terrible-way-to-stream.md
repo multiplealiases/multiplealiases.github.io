@@ -17,8 +17,7 @@ ssh user@host '
 ssh user@host '
     ffmpeg -i "$file" -map 0:a:1 -map 0:v:0 -f matroska \
     -b:a 128k -c:v libx264 -b:v 5M -preset fast - \
- ' | \
-mpv - --sub-file /tmp/subs.mkv --demuxer-max-bytes=512M
+ ' | mpv - --sub-file /tmp/subs.mkv --demuxer-max-bytes=512M
 ```
 
 And a lot of explanation.

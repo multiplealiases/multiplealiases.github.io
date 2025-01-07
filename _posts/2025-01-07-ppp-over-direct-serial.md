@@ -44,7 +44,7 @@ These instructions may or may not be applicable to other operating systems.
 This is simple enough.
 Run `sysctl net.ipv4.ip_forward=1`,
 or if you'd like to make it persistent across reboots,
-create `/etc/sysctl.d/ipv4-forwarding` with the following line:
+create `/etc/sysctl.d/ipv4-forwarding.conf` with the following line:
 
 ```
 net.ipv4.ip_forward=1

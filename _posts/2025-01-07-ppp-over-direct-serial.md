@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "PPP over serial, no dial-up"
-date: 2025-01-08
+title: PPP over serial, no dial-up
+date: 2025-01-07
 permalink: /ppp-over-direct-serial.html
 ---
 

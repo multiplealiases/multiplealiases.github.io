@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What does "Saving 256 bits of creditable seed" mean?
-date: 2025-05-04
+date: 2025-05-03
 permalink: /what-does-saving-creditable-seed-mean.html
 ---
 

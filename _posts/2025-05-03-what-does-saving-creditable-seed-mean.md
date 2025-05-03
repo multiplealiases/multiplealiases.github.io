@@ -139,7 +139,7 @@ sending a request to a device driver
 (via a device node) to Do Stuff with it.
 
 The first argument is a file descriptor to a device node,
-and the second is the moral equivalent of a (per-device)
+and the second is the moral equivalent of a (per-device driver[^device-driver])
 enum representing the operation you would like to perform on it.
 What the rest of the arguments mean,
 what their types are,
@@ -223,3 +223,11 @@ after all.
             looking at the `SYSTEMD_RANDOM_SEED_CREDIT` environment
             variable.
             Details in [systemd-random-seed.service(8)](https://www.man7.org/linux/man-pages/man8/systemd-random-seed.service.8.html).
+
+[^device-driver]: To be more pedantic, "device driver" is an arbitrary concept that
+                  more-or-less means
+                  "whatever you can convince the kernel to load
+                  that shows up as a device node somewhere".
+                  You can send ioctls to things that aren't hardware,
+                  not even emulations of hardware, but purely
+                  internal concepts with no tangible representation in hardware.

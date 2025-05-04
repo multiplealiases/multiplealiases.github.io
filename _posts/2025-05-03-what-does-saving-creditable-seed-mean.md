@@ -123,13 +123,7 @@ using that `req` struct as input.
 	ret = ioctl(random_fd, RNDADDENTROPY, &req);
 ```
 
-<div style="
-    opacity: 75%;
-    border: solid 2px lightblue;
-    padding: 15px 5% 15px 7%;
-    margin: 15px 0%;
-    min-height: 80px;
-" markdown="1">
+<div class="panel-info" markdown="1">
 
 ### **What's an ioctl?**
 

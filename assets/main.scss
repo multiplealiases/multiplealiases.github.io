@@ -1,0 +1,89 @@
+---
+---
+
+@use 'sass:math';
+@import "minima";
+
+$panel-radius: 3px;
+
+/* Start of panel classes for end-use */
+
+.panel-info {
+    @extend .panel-full;
+    h1, h2, h3, h4 {
+        color: darken(lightblue, 30%);
+    }
+    border: solid 2px lightblue;
+}
+
+.panel-warning {
+    @extend .panel-full;
+    h1, h2, h3, h4 {
+        color: orange;
+    }
+    border: solid 3px orange;
+}
+
+.panel-danger {
+    @extend .panel-full;
+    h1, h2, h3, h4 {
+        color: red;
+    }
+    border: solid 5px red;
+}
+
+.panel-info-half {
+    @extend .panel-half;
+    h1, h2, h3, h4 {
+        color: darken(lightblue, 30%);
+    }
+    border: solid 2px lightblue;
+}
+
+.panel-warning-half {
+    @extend .panel-half;
+        h1, h2, h3, h4 {
+        color: orange;
+    }
+    border: solid 3px orange;
+}
+
+.panel-danger-half {
+    @extend .panel-half;
+    h1, h2, h3, h4 {
+        color: red;
+    }
+    border: solid 5px red;
+}
+
+/*
+   End of panel classes for end-use
+   The rest are impl. details.
+*/
+
+.panel {
+    opacity: 75%;
+    border-radius: $panel-radius;
+    padding-top: math.div($spacing-unit, 2);
+    padding-bottom: math.div($spacing-unit, 2);
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+}
+
+.panel-full {
+    @extend .panel;
+    margin: math.div($spacing-unit, 2) 0%;
+}
+
+.panel-half {
+    @extend .panel;
+    float: right;
+    width: 40%;
+    margin: math.div($spacing-unit, 2) math.div($spacing-unit, 2);
+
+    @include media-query($on-palm) {
+        width: auto;
+        float: none;
+        margin: math.div($spacing-unit, 2) 0%;
+    }
+}

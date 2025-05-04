@@ -135,11 +135,11 @@ using that `req` struct as input.
 
 An [ioctl(2)](https://www.man7.org/linux/man-pages/man2/ioctl.2.html)
 is a very generic mechanism, but in essence it's a means of
-sending a request to a device driver
+sending a request to a device driver[^device-driver]
 (via a device node) to Do Stuff with it.
 
 The first argument is a file descriptor to a device node,
-and the second is the moral equivalent of a (per-device driver[^device-driver])
+and the second is the moral equivalent of a (per-device driver)
 enum representing the operation you would like to perform on it.
 What the rest of the arguments mean,
 what their types are,

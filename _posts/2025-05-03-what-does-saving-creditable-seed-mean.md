@@ -6,7 +6,7 @@ permalink: /what-does-saving-creditable-seed-mean.html
 ---
 
 This is a tiny mystery, but one nobody has bothered to document.
-I've tried to solve it to the best of my abilities.
+Let's see if I can fix that gap.
 
 You may have seen the following message at shutdown.
 

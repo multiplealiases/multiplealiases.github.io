@@ -59,10 +59,19 @@ and runs a program called `seedrng`.
 # The program
 
 `seedrng`'s purpose is obvious enough
-if you have the background knowledge:
+if you have the background knowledge [(and if you don't)](prng-background.html):
 it's a utility to seed the Linux kernel random number generator.
 In specific, it handles both *creating* a seed file for next boot,
 and for using that seed file to seed the RNG on boot.
+
+<div class="panel-info" markdown="1">
+I can't confirm this,
+but I think "entropy pool" is Linux's term for the RNG seed in use.
+It gets mixed around and entropy injected often enough
+that even if you knew the RNG seed at one point in time
+(a 1/(2^256) chance),
+you wouldn't have time to make use of it.
+</div>
 
 [random(4)](https://www.man7.org/linux/man-pages/man4/random.4.html)
 (or `man 4 random` on your Linux machine)
@@ -213,7 +222,7 @@ In a setup where you've deployed the same image,
 complete with RNG seed, to multiple machines,
 there is *theoretically* the problem of all these machines having the same
 RNG state. This is a hazard for, say, long-lived SSH keys or TLS certificates,
-since those tend to be generated very early in a system's lifetime.
+since those tend to be generated at first boot and probably never refreshed.
 Whether this setup can actually be exploited is well above my paygrade,
 but it's a thought.
 

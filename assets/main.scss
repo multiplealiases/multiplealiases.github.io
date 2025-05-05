@@ -5,7 +5,61 @@
 
 $panel-radius: 3px;
 
+/*
+  I dislike the default header sizes.
+*/
+
+h1 {
+    @include relative-font-size(2.1);
+
+    @include media-query($on-laptop) {
+        @include relative-font-size(1.9);
+    }
+}
+
+h2 {
+    @include relative-font-size(1.5);
+
+    @include media-query($on-laptop) {
+        @include relative-font-size(1.3125);
+    }
+}
+
+h3 {
+    @include relative-font-size(1.17);
+
+    @include media-query($on-laptop) {
+        @include relative-font-size(1.0725);
+    }
+}
+
+h4 {
+    @include relative-font-size(1);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1);
+    }
+}
+
 /* Start of panel classes for end-use */
+
+.altcontext {
+    border-radius: $panel-radius;
+    padding-top: ($spacing-unit / 2);
+    /*
+      Minima's Markdown already comes with
+      ($spacing-unit / 2) padding-bottom
+      for 'visual rhythm'.
+    */
+    padding-bottom: 0;
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+
+    border-style: dashed none dashed none;
+
+    border-width: 2px;
+    margin: ($spacing-unit / 2) 0%;
+}
 
 .panel-info {
     @extend .panel-full;
@@ -64,7 +118,12 @@ $panel-radius: 3px;
     opacity: 75%;
     border-radius: $panel-radius;
     padding-top: ($spacing-unit / 2);
-    padding-bottom: ($spacing-unit / 2);
+    /*
+      Minima's Markdown already comes with
+      ($spacing-unit / 2) padding-bottom
+      for 'visual rhythm'.
+    */
+    padding-bottom: 0;
     padding-left: $spacing-unit;
     padding-right: $spacing-unit;
 }

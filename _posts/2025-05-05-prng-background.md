@@ -109,8 +109,9 @@ A PRNG is 2 things:
 
 * a "seed" value
 
-For a fixed seed value, a PRNG produces some shuffling of a
-range of numbers. The length of that shuffling is called its "period",
+For a fixed seed value, a PRNG produces some shuffling
+(the standard term is a "cycle") of a range of numbers.
+The length of that shuffling is called its "period",
 and it's one of the factors that determines how good the PRNG is.
 All else being equal, the longer it is, the better it is.
 
@@ -197,8 +198,12 @@ improbable that it *is* impossible.
 This makes it much, much harder to manipulate the RNG.
 You now need total, single-step control (possibly even more than that!)
 over the system, as well as its peripherals and its environment.
+Barring that, you would need to find the seed within the span of the
+reseed interval[^reseed-interval], *and then* figure out where the
+RNG is in its cycle.
 
-To put it bluntly: **you'd have to be God.**
+To put it bluntly: **you'd have to be God**
+to manipulate the Linux kernel's RNG.
 
 # Footnotes
 

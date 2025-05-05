@@ -129,7 +129,8 @@ Instead, let's make use of this conveniently-placed trickle
 of "true" randomness.
 Seeds aren't that much data;
 the size that the Linux kernel uses is 256 bits, or 32 bytes.
-At the rates the Linux kernel collects entropy, this is more than enough.
+The Linux kernel may not collect much entropy with the method I just described,
+but it's definitely collecting enough to fill 32 bytes.
 
 You might scoff at that, but consider what 256 bits would physically represent:
 

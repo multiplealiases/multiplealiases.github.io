@@ -79,6 +79,7 @@ $panel-radius: 3px;
     float: right;
     width: 40%;
     margin: ($spacing-unit / 2) ($spacing-unit / 2);
+    margin-right: 0;
 
     @include media-query($on-palm) {
         width: auto;

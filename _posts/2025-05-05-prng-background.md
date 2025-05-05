@@ -169,12 +169,14 @@ that'd be a real disaster.
 You'd be able to predict the contents of
 the keys and certificates the machine will end up generating.
 
+<div class="panel-info" markdown="1">
 On a less serious note,
 exploiting RNG seeding schemes that only seed once,
 or seed in a manner that can be controlled,
 are the basis for RNG manipulation in (older) games.
-[The Smogon guide to RNG manipulation in Pokémon games](https://www.smogon.com/ingame/rng/)
+[The Smogon guides for RNG manipulation in Pokémon games](https://www.smogon.com/ingame/rng/)
 is a real hoot.
+</div>
 
 # Who said we can't jump between them?
 

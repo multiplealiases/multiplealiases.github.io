@@ -8,7 +8,7 @@ permalink: /what-does-saving-creditable-seed-mean.html
 This is a tiny mystery, but one nobody has bothered to document.
 I've tried to solve it to the best of my abilities.
 
-You may have seen the following message at boot.
+You may have seen the following message at shutdown.
 
 ```
 Saving 256 bits of creditable seed
@@ -128,7 +128,7 @@ using that `req` struct as input.
 ### **What's an ioctl?**
 
 An [ioctl(2)](https://www.man7.org/linux/man-pages/man2/ioctl.2.html)
-is a very generic mechanism, but in essence it's a means of
+is a generic mechanism, but in essence it's a means of
 sending a request to a device driver[^device-driver]
 (via a device node) to Do Stuff with it.
 
@@ -149,42 +149,77 @@ we just saw is effectively saying "I would like to call the
 `RNDADDENTROPY` "method" on `/dev/urandom`, using `&req` as my argument".
 </div>
 
-And with the nitty-gritty described, let's step up a layer of abstraction
-to disappoint you and say I *don't* know what crediting does.
+And with the nitty-gritty described, let's step up a layer of abstraction.
 
 `RNDADDENTROPY` there is an operation that adds additional entropy to
 the entropy pool, using that `req` struct. It does this by loading
-`.buffer` (the actual data) into the entropy pool, incrementing (or decrementing!)
+`.buffer` (the actual data) into the entropy pool, incrementing[^old-credit]
 the kernel entropy count by the amount given in `.entropy_count`.
 
-This, thus, is what "creditable" seems to mean: non-creditable entropy
+This, thus, is what "creditable" means: non-creditable entropy
 does not directly add, or "credit" into the entropy pool's count.
-Non-creditable entropy adds to the entropy pool,
-but doesn't change its count.
+Non-creditable entropy seeds the entropy pool with random data,
+but doesn't change how much entropy the kernel thinks it has.
 
-What I don't know is when to choose between crediting and non-crediting,
-but here's what I know so far:
+The function responsible for handling crediting of RNG entropy,
+`credit_entropy_bits()` (about 2.6.39+?)/`credit_init_bits()` (5.19+),
+*is* simplistic. It'll believe exactly whatever you say.
+The `RNDADDTOENTCNT` ioctl is a more-or-less
+direct wrapper around this function, even.
+It's a good thing, then,
+that this and `RNDADDENTROPY`
+are guarded behind the `CAP_SYS_ADMIN` capability.
 
-The Linux kernel, as of version 5.6, does not block reads
-from `/dev/random` no matter how fast you read it...
-but there's exactly one case where this is not true:
-before the kernel RNG's entropy pool is initialized,
-an event that happens only once.
+# The full picture
+
 You start the machine, Linux boots,
-and it initializes the entropy pool at some point.
+and it initializes the entropy pool
+(producing the message `crng init done` in the process)
+at some point by collecting whatever entropy it can find from the outside.
+
+<div class="panel-info-half" markdown="1">
+### "Well, actually..."
+
+Circa kernel 5.4, RNG initialization status is tracked in 3 stages:
+`CRNG_EMPTY`, `CRNG_EARLY`, and `CRNG_READY`[^crng-states].
+It works like a ratchet; you can only go forwards in this progression.
+
+I'm unsure what cares about `CRNG_EARLY`, though.
+</div>
+
 Once it's done, you can't *un*initialize it short of
 turning the machine off.
+On kernels 5.6+, this means
+that `/dev/random` and
+[getrandom(2)](https://www.man7.org/linux/man-pages/man2/getrandom.2.html)
+in blocking mode will never block again.
 
-Unless the Linux kernel is more foolish than I thought, it surely won't
-believe the value of `.entropy_count` at face value, will it?
+The process of crediting the RNG, thus, is a signal to the RNG
+that it should get ready faster, because `seedrng` has
+already added entropy to the system.
 
-So what's going on here?
-What's the purpose of crediting?
-Is it merely a signal to the kernel that it's allowed to ignore if it
-wishes, or is it something the kernel will die on a hill for, regardless
-of what data was actually in `.buffer`?
+However, this behavior can be undesirable. If I've done my
+job correctly so far, the following comment from OpenRC's
+`conf.d/seedrng` shouldn't mystify you anymore:
 
-With that said, here's what I can say with some confidence.
+```
+# Set skip_credit to yes or true if you do not want seed files to actually
+# credit the random number generator. For example, you should set this if you
+# plan to replicate the file system image without removing the contents of
+# ${seed_dir}.
+```
+
+In a setup where you've deployed the same image,
+complete with RNG seed, to multiple machines,
+there is *theoretically* the problem of all these machines having the same
+RNG state. This is a hazard for, say, long-lived SSH keys or TLS certificates,
+since those tend to be generated very early in a system's lifetime.
+Whether this setup can actually be exploited is well above my paygrade,
+but it's a thought.
+
+That being said, you can remove `${seed_dir}` from your image
+(without booting it, since that'll make a new seed)
+to force your machines to find their own entropy.
 
 # Conclusion
 
@@ -197,7 +232,7 @@ it's saving 256 bits of entropy harvested from `/dev/urandom`
 so that the next time the system boots,
 it can seed the kernel RNG with it,
 "crediting" it into the kernel's "bank account" of entropy,
-so it can get the entropy pool initialized earlier.
+so it can declare the entropy pool ready sooner.
 
 While this is usually not a problem on desktops or laptops, it's
 an important consideration on hosts with little outside entropy
@@ -225,3 +260,11 @@ after all.
                   You can send ioctls to things that aren't hardware,
                   not even emulations of hardware, but purely
                   internal concepts with no tangible representation in hardware.
+
+[^crng-states]: While the actual enum variants `CRNG_EMPTY`,
+                `CRNG_EARLY`, and `CRNG_READY`
+                don't exist this far back, the spiritual equivalent
+                of these variants do,
+                just going 0 -> 1 -> 2 instead.
+
+[^old-credit]: Pre-5.19 kernels allowed *decrementing* the entropy count.

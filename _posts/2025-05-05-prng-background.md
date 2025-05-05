@@ -161,8 +161,10 @@ But there's still a flaw here.
 Filling those 256 bits with entropy
 and then using that as the only seed means that,
 in theory, it's possible to figure out what seed was being used.
-If you planted 256 bits of all-0s into `seedrng`'s
-stash, that'd be a real disaster.
+If you planted 256 bits of all-0s into the
+on-disk entropy stash that `seedrng`
+or `systemd-random-seed.service` make use of,
+that'd be a real disaster.
 You'd be able to predict the contents of
 the keys and certificates the machine will end up generating.
 

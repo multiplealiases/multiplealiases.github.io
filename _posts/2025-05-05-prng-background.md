@@ -123,7 +123,7 @@ but you have the *exact* seed that produces *that* specific shuffling.
 # Who says we can't synthesize one?
 
 It'd be catastrophic if we all set the seed value to a fixed value;
-imagine getting the same SSH private keys each time you ran `ssh-keygen`.
+imagine getting the same SSH private keys each time we all ran `ssh-keygen`.
 Clearly, this isn't what we do.
 
 Instead, let's make use of this conveniently-placed trickle

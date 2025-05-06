@@ -175,7 +175,7 @@ exploiting RNG seeding schemes that only seed once,
 or seed in a manner that can be controlled,
 are the basis for RNG manipulation in (older) games.
 [The Smogon guides for RNG manipulation in Pokémon games](https://www.smogon.com/ingame/rng/)
-is a real hoot.
+are a real hoot.
 </div>
 
 # Who said we can't jump between them?

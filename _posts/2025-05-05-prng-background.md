@@ -82,9 +82,21 @@ there's still the other 5+ sources you need to account for, *including*
 the very CPU it's running on.
 </div>
 
-These digits at the end ("least significant digits") are basically
-impossible to control, and this makes them effectively
-random. Of course, there's some statistical magic that needs
+Say, how precisely do you know your bank account balance?
+To the nearest dollar? 10 dollars? 100? 1000?
+All reasonable answers depending on how much you have,
+and what you're buying.
+What I don't think you'll answer with is "to the nearest cent",
+much less "to the nearest hundredth of a cent" that stock
+prices are listed in.
+Have you ever *bought* anything and looked at how many cents it cost?
+For all you know, those digits at the end are just random.
+You have no control over them. They may as well be random.
+
+And it turns out, yes, those digits on the end ("least significant digits"),
+of both your account balance,
+and of the data from these "events", *are* random.
+Of course, there's some statistical magic that needs
 to be done to "clean" those values for proper randomness,
 but you'd have to ask someone else for that.
 I'm assuming that magic works; the whole world relies on it!
@@ -155,7 +167,7 @@ Even if those switches were 100 THz transistors,
 the universe would end first.
 If the PRNG is any good, there is no correlation
 at all between the possible seed values;
-there is no pattern in the shufflings
+there is no pattern *in* the shufflings
 and there is no pattern *between* the shufflings.
 
 But there's still a flaw here.

@@ -4,6 +4,7 @@
 @import "minima";
 
 $panel-radius: 3px;
+$paragraph-font-size: 16px;
 
 /*
   I dislike the default header sizes.
@@ -64,9 +65,21 @@ h4 {
 .panel-info {
     @extend .panel-full;
     h1, h2, h3, h4 {
-        color: darken(lightblue, 30%);
+        color: darken(lightblue, 50%);
     }
     border: solid 2px lightblue;
+
+    &::before {
+        content: "info";
+        float: right;
+        margin: - $spacing-unit - 2px;
+        color: darken(lightblue, 50%);
+        background: lightblue;
+        transform: translateY($paragraph-font-size);
+        padding-left: $spacing-unit / 4;
+        padding-right: $spacing-unit / 4;
+        border-radius: 3px;
+    }
 }
 
 .panel-warning {
@@ -75,6 +88,19 @@ h4 {
         color: orange;
     }
     border: solid 3px orange;
+    &::before {
+        content: "warning";
+        float: right;
+        position: relative;
+        top: 0;
+        margin: - $spacing-unit - 3px;
+        color: #4c2414;
+        background: orange;
+        transform: translateY($paragraph-font-size);
+        padding-left: $spacing-unit / 2;
+        padding-right: $spacing-unit / 2;
+        border-radius: 3px;
+    }
 }
 
 .panel-danger {
@@ -83,22 +109,60 @@ h4 {
         color: red;
     }
     border: solid 5px red;
+    &::before {
+        content: "danger";
+        float: right;
+        position: relative;
+        top: 0;
+        margin: - $spacing-unit - 3px;
+        color: darken(red, 50%);
+        background: red;
+        transform: translateY($paragraph-font-size);
+        padding-left: $spacing-unit / 2;
+        padding-right: $spacing-unit / 2;
+        border-radius: 3px;
+    }
 }
 
 .panel-info-half {
     @extend .panel-half;
     h1, h2, h3, h4 {
-        color: darken(lightblue, 30%);
+        color: darken(lightblue, 50%);
     }
     border: solid 2px lightblue;
+    &::before {
+        content: "info";
+        float: right;
+        margin: - $spacing-unit - 2px;
+        color: darken(lightblue, 50%);
+        background: lightblue;
+        transform: translateY($paragraph-font-size);
+        padding-left: $spacing-unit / 4;
+        padding-right: $spacing-unit / 4;
+        border-radius: 3px;
+    }
 }
 
 .panel-warning-half {
     @extend .panel-half;
         h1, h2, h3, h4 {
-        color: orange;
+        color: darken(orange, 5%);
     }
     border: solid 3px orange;
+
+    &::before {
+        content: "warning";
+        float: right;
+        position: relative;
+        top: 0;
+        margin: - $spacing-unit - 3px;
+        color: #4c2414;
+        background: orange;
+        transform: translateY($paragraph-font-size);
+        padding-left: $spacing-unit / 2;
+        padding-right: $spacing-unit / 2;
+        border-radius: 3px;
+    }
 }
 
 .panel-danger-half {
@@ -107,6 +171,19 @@ h4 {
         color: red;
     }
     border: solid 5px red;
+    &::before {
+        content: "danger";
+        float: right;
+        position: relative;
+        top: 0;
+        margin: - $spacing-unit - 3px;
+        color: darken(red, 50%);
+        background: red;
+        transform: translateY($paragraph-font-size);
+        padding-left: $spacing-unit / 2;
+        padding-right: $spacing-unit / 2;
+        border-radius: 3px;
+    }
 }
 
 /*

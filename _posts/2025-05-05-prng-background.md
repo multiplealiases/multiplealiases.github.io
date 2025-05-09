@@ -208,6 +208,11 @@ you wiping your disk with `dd`,
 trying to actually "land" at any specific
 "place" in the RNG's shuffling is so
 improbable that it *is* impossible.
+As if it couldn't get any harder,
+the internal hidden state of the RNG in use
+gets jostled around every time
+the kernel is asked to produce random numbers
+("fast key-erasure RNG"?).
 
 This makes it much, much harder to manipulate the RNG.
 You now need total, single-step control (possibly even more than that!)

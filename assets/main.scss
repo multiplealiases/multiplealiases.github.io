@@ -73,7 +73,7 @@ h4 {
         content: "info";
         float: right;
         margin: - $spacing-unit - 2px;
-        color: darken(lightblue, 50%);
+        background: lightblue;
         color: white;
         transform: translateY($paragraph-font-size);
         padding-left: $spacing-unit / 4;

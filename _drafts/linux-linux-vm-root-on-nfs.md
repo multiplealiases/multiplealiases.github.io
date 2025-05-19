@@ -290,12 +290,10 @@ like NFS support as kernel modules instead of built-in.
 
 </div>
 
-If you're paying attention to the scrollbar,
-this article's not over...
-
-...as this is the point where we descend into **hell**.
-
 ## Distribution-specific notes
+<h-sub markdown="block">
+wherein we descend into **hell**
+</h-sub>
 
 ### Arch
 

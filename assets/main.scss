@@ -42,7 +42,48 @@ h4 {
     }
 }
 
+/* Bugfix: allows syntax-highlighted code blocks
+   to correctly fit to width in the presence of half-panels */
+.highlighter-rouge {
+	overflow-x: auto;
+}
+
+details {
+    padding-bottom: $spacing-unit / 2;
+}
+
+pre-header {
+	border-radius: 3px 3px 0 0;
+	transform: translateY(2px);
+	font-family: monospace;
+	display: block;
+	overflow-x: auto;
+	font-weight: normal;
+	background-color: $grey-color-light;
+	border: 1px solid $grey-color-light;
+	&::before {
+		@extend .pre-header-tag;
+		content: attr(tag);
+	}
+}
+
+.pre-header-tag {
+	border-radius: 2px 0 0 0;
+	margin-left: 0px;
+	margin-right: 1em;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 4px 0.5em;
+	padding-top: 3px;
+	background-color: lighten($grey-color, 20%);
+}
+
 /* Start of panel classes for end-use */
+
+aside {
+    @extend .panel-half;
+    border: dashed 1px $grey-color-dark;
+}
 
 .altcontext {
     border-radius: $panel-radius;
@@ -108,7 +149,7 @@ h4 {
     h1, h2, h3, h4 {
         color: red;
     }
-    border: solid 5px red;
+    border: solid 5px desaturate(red, 30%);
     &::before {
         content: "danger";
         float: right;
@@ -116,7 +157,7 @@ h4 {
         top: 0;
         margin: - $spacing-unit - 3px;
         color: white;
-        background: red;
+        background: desaturate(red, 30%);
         transform: translateY($paragraph-font-size);
         padding-left: $spacing-unit / 2;
         padding-right: $spacing-unit / 2;
@@ -170,7 +211,7 @@ h4 {
     h1, h2, h3, h4 {
         color: red;
     }
-    border: solid 5px red;
+    border: solid 5px desaturate(red, 30%);
     &::before {
         content: "danger";
         float: right;
@@ -178,7 +219,7 @@ h4 {
         top: 0;
         margin: - $spacing-unit - 3px;
         color: white;
-        background: red;
+        background: desaturate(red, 30%);
         transform: translateY($paragraph-font-size);
         padding-left: $spacing-unit / 2;
         padding-right: $spacing-unit / 2;

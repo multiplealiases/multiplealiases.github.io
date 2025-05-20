@@ -556,6 +556,7 @@ For good measure, configure it in `fstab` so you don't forget:
 
 <pre-header tag="snippet">/etc/fstab</pre-header>
 ```fstab
+# <source> <destination> <fs-type> <options> <dump> <pass>
 AAA    /var/tmp/portage    tmpfs    defaults    0    0
 ```
 

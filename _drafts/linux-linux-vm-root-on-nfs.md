@@ -297,7 +297,7 @@ wherein we descend into **hell**
 ### Arch
 
 Surprisingly painless
-if you ignore the warnings.
+if you ignore the copious warnings.
 The Arch wiki has instructions for using
 [dracut as an initramfs generator in place of mkinitcpio](https://wiki.archlinux.org/title/Dracut#Generate_a_new_initramfs_on_kernel_upgrade).
 

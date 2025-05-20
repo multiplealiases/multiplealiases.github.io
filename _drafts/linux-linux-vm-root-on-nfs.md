@@ -55,6 +55,8 @@ Fortunately, at least Linux guests
 have a way out...
 sorta.
 
+In practice, this only really works on Gentoo and Arch.
+
 # NFS
 
 Enter NFS: the Network File System.
@@ -217,7 +219,7 @@ And start and enable the server.
 
 ## General guest setup
 <h-sub markdown="block">
-sounds easy when I put it this way
+the devil's not here, it's in the details
 </h-sub>
 
 <div class="panel-info-half" markdown="1">
@@ -576,6 +578,10 @@ It Just Works™?
 I have no comments here.
 It seems to boot to a KDE Plasma session
 just fine.
+
+### Chimera
+
+
 
 ### Fedora
 

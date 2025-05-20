@@ -582,7 +582,13 @@ just fine.
 
 ### Chimera
 
-
+Hm. I can't say it worked for me.
+For starters, Dracut isn't packaged,
+so I used the default initramfs generator,
+`initramfs-tools`,
+set NFSROOT,
+and it did not come with any DHCP client
+I can recognize.
 
 ### Fedora
 

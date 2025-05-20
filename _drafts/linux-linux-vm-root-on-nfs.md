@@ -52,7 +52,8 @@ will need you to have a disk image somewhere in the process;
 at no point will your Linux host be able to see just a mounted filesystem.
 Fortunately, at least Linux guests
 (maybe other Unix-likes, too?)
-have a way out.
+have a way out...
+sorta.
 
 # NFS
 
@@ -184,9 +185,9 @@ And now the exports. If you followed my example, your `exports` should look like
 
 <pre-header tag="file">/etc/exports</pre-header>
 ```
-/export/fedora    192.168.122.1/24(insecure,rw,async,no_root_squash,crossmnt)
-/export/gentoo    192.168.122.1/24(insecure,rw,async,no_root_squash,crossmnt)
-/export/arch      192.168.122.1/24(insecure,rw,async,no_root_squash,crossmnt)
+/export/fedora    192.168.122.1/24(insecure,rw,async,no_root_squash)
+/export/gentoo    192.168.122.1/24(insecure,rw,async,no_root_squash)
+/export/arch      192.168.122.1/24(insecure,rw,async,no_root_squash)
 ```
 
 If you're not using libvirt NAT (or you've changed the subnet),
@@ -208,11 +209,6 @@ And some explanation of the options.
   where `root_squash` can map UID 0 ("root") to
   the NFS `nobody` user. We will not be needing that.
 
-* `crossmnt`: allows the exports to "see" mounts inside the subtree.
-  This allows you to `mount --bind` paths you feel
-  should be shared between host and guest,
-  such as `/var/db/repos` between Gentoo host and Gentoo guest.
-
 And start and enable the server.
 
 ```command
@@ -220,6 +216,9 @@ And start and enable the server.
 ```
 
 ## General guest setup
+<h-sub markdown="block">
+sounds easy when I put it this way
+</h-sub>
 
 <div class="panel-info-half" markdown="1">
 If you choose an initramfs generator other than Dracut,
@@ -453,7 +452,7 @@ but it turns out the alternative,
 is unsatisfiable under Alpine.
 There is literally no set of packages you could install to make this work.
 
-See, the chain goes `network-manager` -> `dbus` -> `dbus-daemon` -> `systemd`.
+See, the chain goes `network-manager` → `dbus` → `dbus-daemon` → `systemd`.
 Do you see the problem?
 Alpine *doesn't use* systemd!
 
@@ -479,8 +478,9 @@ and is *exactly* the same as `-x`.
 
 flock(1) is a util-linux invention.
 It doesn't need to conform to prior standards because it *is* its own standard.
-What happened here?
-Why are there 2 names for the same flag?
+
+So why are there 2 names for the same flag?
+Why *is* there even a flag for default behavior?
 </aside>
 
 It'll get stuck trying to use `flock`...
@@ -498,6 +498,8 @@ official Gentoo minimal install liveCD,
 not because you need it to install Gentoo,
 but because I'm going to assume
 you're not trying to suffer more than you already are.
+
+I mean, for starters, you're doing Gentoo.
 
 #### Start the chronyd service before chrooting
 
@@ -561,6 +563,19 @@ It might be possible to build packages that are too large
 
 ### Gentoo (OpenRC)
 
+The Gentoo/systemd tips apply,
+and it turns out Dracut works here?
+Install `net-misc/dhcp`,
+and hope you're not in the future
+where they've removed either the package itself
+or the client functionality.
+Generate an initramfs using
+`emerge --config gentoo-kernel-bin`, and...
+It Just Works™?
+
+I have no comments here.
+It seems to boot to a KDE Plasma session
+just fine.
 
 ### Fedora
 

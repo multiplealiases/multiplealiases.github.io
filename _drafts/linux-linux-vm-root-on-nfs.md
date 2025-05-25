@@ -481,7 +481,7 @@ and is *exactly* the same as `-x`.
 flock(1) is a util-linux invention.
 It doesn't need to conform to prior standards because it *is* its own standard.
 
-So why are there 2 names for the same flag?
+Why are there 2 names for the same flag?
 Why *is* there even a flag for default behavior?
 </aside>
 
@@ -590,9 +590,27 @@ set NFSROOT,
 and it did not come with any DHCP client
 I can recognize.
 
+It didn't even manage to configure the network.
+
+### Debian
+
+You'll need to do an
+[install from `debootstrap`](https://www.debian.org/releases/stable/i386/apds03.en.html),
+since the installer doesn't know about NFS.
+It also doesn't have NFS support at all.
+Instead, use the Arch installer ISO,
+because it has `mount.nfs`
+and you can `pacman -Sy debootstrap debian-archive-keyring`.
+
+The `dracut` package replaces `initramfs-tools`
+and installs new kernel install hooks;
+use `dpkg-reconfigure` on the Linux package used
+(and probably `source /etc/profile` to get `/sbin` into PATH)
+to update the initramfs.
+
 ### Fedora
 
-I can't get it to work.
+Some assembly needed, but it does work better than I thought it did.
 
 #### Fedora won't install to NFS
 
@@ -637,9 +655,9 @@ int cap_set_fd(int fd, cap_t caps) {
 Compile and use as
 
 ```console
-# dnf install @c-development libcap-devel
-# gcc -shared -Wall disable-set-filecaps.c -o /disable-set-filecaps.o
-# LD_PRELOAD=/disable-set-filecaps.o dnf --use-host-config --installroot /mnt/sysimage --releasever=42 install @core @gnome-desktop
+(chroot) # dnf install @c-development libcap-devel
+(chroot) # gcc -shared -Wall disable-set-filecaps.c -o /disable-set-filecaps.so
+(chroot) # LD_PRELOAD=/disable-set-filecaps.so dnf --use-host-config --installroot /mnt/sysimage --releasever=42 install @core @gnome-desktop
 ```
 
 #### SELinux hates your guts
@@ -651,9 +669,19 @@ Fine, so we'll just set it to permissive:
 enforcing=0
 ```
 
-#### Fedora hates your guts
+Oh, and make sure the `fstab` entry is actually populated
+and makes the NFS root remount read-write.
 
-As far as I'm able to tell,
-this is the end of the line.
-It seems to pivot into the final rootfs,
-but a million services die at once after that.
+#### Can't log in
+
+That's because `authselect` wasn't configured correctly.
+`chroot` from outside the VM and run
+
+```
+authselect select local --force
+```
+
+#### Icons might be broken
+
+Brute-force solution: `dnf reinstall *`.
+I don't know how else to make it work.

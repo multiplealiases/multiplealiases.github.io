@@ -4,6 +4,7 @@ title: "A (Linux host and guest) virtual machine root-on-NFS guide"
 params:
     license: CC-BY-4.0
 draft: true
+date: 2025-05-25
 permalink: /linux-linux-vm-root-on-nfs.html
 excerpt: \"Works\", as long as your guest is Arch or Gentoo.
 ---
@@ -145,7 +146,6 @@ if you're planning on installing
 Fedora, Gentoo and Arch, run
 
 ```console
-# mkdir -p /export/fedora
 # mkdir -p /export/gentoo
 # mkdir -p /export/arch
 ```
@@ -187,7 +187,6 @@ And now the exports. If you followed my example, your `exports` should look like
 
 <pre-header tag="file">/etc/exports</pre-header>
 ```
-/export/fedora    192.168.122.1/24(insecure,rw,async,no_root_squash)
 /export/gentoo    192.168.122.1/24(insecure,rw,async,no_root_squash)
 /export/arch      192.168.122.1/24(insecure,rw,async,no_root_squash)
 ```

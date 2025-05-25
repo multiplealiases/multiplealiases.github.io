@@ -480,7 +480,8 @@ The funniest part is that `-e`
 is *default* behavior
 and is *exactly* the same as `-x`.
 
-flock(1) is a util-linux invention.
+[flock(1)](https://www.man7.org/linux/man-pages/man1/flock.1.html)
+is a util-linux invention.
 It doesn't need to conform to prior standards because it *is* its own standard.
 
 Why are there 2 names for the same flag?

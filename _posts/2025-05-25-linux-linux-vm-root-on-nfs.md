@@ -70,7 +70,10 @@ Unfortunately, it has some caveats;
 the NFS server built into the kernel
 doesn't appear to know about Linux filesystem
 [capabilities](https://www.man7.org/linux/man-pages/man7/capabilities.7.html),
-which renders Fedora unusable.
+which renders Fedora
+(and/or other distros whose package managers require
+filesystem capabilities to be set corrrectly)
+unusable without horrible workarounds.
 
 <div class="panel-danger" markdown="1">
 ## A note on security
@@ -143,7 +146,7 @@ but I'm going to suggest that you then make another subdirectory
 under that, named for the virtual machine you're using.
 That's to say,
 if you're planning on installing
-Fedora, Gentoo and Arch, run
+Gentoo and Arch, run
 
 ```console
 # mkdir -p /export/gentoo

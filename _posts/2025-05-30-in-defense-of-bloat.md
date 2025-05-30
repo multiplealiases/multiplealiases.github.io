@@ -6,7 +6,7 @@ params:
 draft: true
 date: 2025-05-30
 permalink: /in-defense-of-bloat.html
-excerpt_separator: <!--more-->
+excerpt: \"bloat\" as a concept is ahistorical bullshit.
 ---
 
 A motif certain pundits in the Linux sphere will repeat
@@ -17,8 +17,6 @@ it makes your programs have featuresets they don't need[^on-need],
 it took your kids in the divorce...
 
 I think what they're saying is **ahistorical bullshit**.
-
-<!--more-->
 
 # The IBM PC kicked off the PC revolution, not the Commodore 64
 

@@ -3,7 +3,6 @@ layout: post
 title: "In defense of bloat"
 params:
     license: CC-BY-4.0
-draft: true
 date: 2025-05-30
 permalink: /in-defense-of-bloat.html
 excerpt: \"bloat\" as a concept is ahistorical bullshit.

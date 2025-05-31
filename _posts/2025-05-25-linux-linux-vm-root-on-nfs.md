@@ -3,7 +3,6 @@ layout: post
 title: "A (Linux host and guest) virtual machine root-on-NFS guide"
 params:
     license: CC-BY-4.0
-draft: true
 date: 2025-05-25
 permalink: /linux-linux-vm-root-on-nfs.html
 excerpt: \"Works\", as long as your guest is Arch or Gentoo.

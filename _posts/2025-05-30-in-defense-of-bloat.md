@@ -138,7 +138,8 @@ and then have the audacity to be baffled
 when nobody wants to work anymore.
 
 Given this environment,
-of course 'bloat' as a concept would fall by the wayside.
+of course making things work well on lower-end hardware
+would fall by the wayside.
 Of course the modern web ends up
 [being downright unusable](https://danluu.com/slow-device/)
 on an N4020 or a quad-core Cortex-A7.

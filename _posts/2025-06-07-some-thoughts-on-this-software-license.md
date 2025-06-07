@@ -5,6 +5,7 @@ params:
     license: CC-BY-4.0
 date: 2025-06-07
 permalink: /thoughts-on-software-license.html
+excerpt: In which I have strong words about this "open" software license, and maybe possibly scope-crept a little bit.
 ---
 
 <div class="altcontext" markdown="1">

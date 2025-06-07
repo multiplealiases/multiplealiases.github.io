@@ -56,6 +56,43 @@ keeping around a full, unedited copy in case all other copies end up deleted.
 
 The hell is this? Okay, let me break it down:
 
+# It's cowardly
+
+Before I talk into the wider problem,
+let me say something about the moral position this license takes.
+It specifically wants to shut out Bad People™,
+but it's also downright cowardly.
+I think a reality of living in a society is that,
+eventually, what you do will end up ultimately,
+indirectly contributing to evil.
+It wouldn't take a prophet to say that NumPy is probably used
+by militaries for calculations that will probably be used
+to murder people.
+
+I don't *like* this state of affairs, I really don't,
+but don't you also go outside in daylight,
+knowing that it increases your risk of cancer?
+It's about risk *management*;
+the Bad Thing may happen,
+but isn't it worth it to have done the risky thing?
+Don't you want to do some good?
+Hell, it's not like NumPy is *made* to kill;
+they've made a conveyor belt
+which happens to be used by someone else to make guns.
+You didn't set out to hurt people, so why act like you are?
+
+Either you will have done some good and a tiny amount of bad,
+or you will have done *no* good and *no* bad.
+This license deprives others from doing good with your work,
+because you're too scared of the comparatively tiny amount
+of bad that could be done with it.
+It's not a productive way to think about the problem.
+
+I think if you really want to stop evil,
+speak out against evil.
+Donate time, money and other resources to causes against evil.
+Do **something**, don't let this moral purity ritual paralyze you.
+
 # FOSS licenses are a difficult compromise.
 
 What I think I've understood about Free Software is that it's a legal shim.

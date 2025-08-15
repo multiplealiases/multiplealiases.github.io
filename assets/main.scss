@@ -126,7 +126,7 @@ aside {
         margin: - $spacing-unit - 2px;
         background: lightblue;
         color: white;
-        transform: translateY($paragraph-font-size);
+        transform: translateY($paragraph-font-size / 2);
         padding-left: $spacing-unit / 4;
         padding-right: $spacing-unit / 4;
         border-radius: 3px;
@@ -147,7 +147,7 @@ aside {
         margin: - $spacing-unit - 3px;
         color: white;
         background: orange;
-        transform: translateY($paragraph-font-size);
+        transform: translateY($paragraph-font-size / 2);
         padding-left: $spacing-unit / 2;
         padding-right: $spacing-unit / 2;
         border-radius: 3px;
@@ -168,7 +168,7 @@ aside {
         margin: - $spacing-unit - 3px;
         color: white;
         background: desaturate(red, 30%);
-        transform: translateY($paragraph-font-size);
+        transform: translateY($paragraph-font-size / 2);
         padding-left: $spacing-unit / 2;
         padding-right: $spacing-unit / 2;
         border-radius: 3px;
@@ -187,7 +187,7 @@ aside {
         margin: - $spacing-unit - 2px;
         color: white;
         background: lightblue;
-        transform: translateY($paragraph-font-size);
+        transform: translateY($paragraph-font-size / 2);
         padding-left: $spacing-unit / 4;
         padding-right: $spacing-unit / 4;
         border-radius: 3px;
@@ -209,7 +209,7 @@ aside {
         margin: - $spacing-unit - 3px;
         color: white;
         background: orange;
-        transform: translateY($paragraph-font-size);
+        transform: translateY($paragraph-font-size / 2);
         padding-left: $spacing-unit / 2;
         padding-right: $spacing-unit / 2;
         border-radius: 3px;
@@ -230,7 +230,7 @@ aside {
         margin: - $spacing-unit - 3px;
         color: white;
         background: desaturate(red, 30%);
-        transform: translateY($paragraph-font-size);
+        transform: translateY($paragraph-font-size / 2);
         padding-left: $spacing-unit / 2;
         padding-right: $spacing-unit / 2;
         border-radius: 3px;
@@ -245,13 +245,19 @@ aside {
 .panel {
     opacity: 75%;
     border-radius: $panel-radius;
-    padding-top: ($spacing-unit / 2);
+    /*
+       The extra 1/4 gives enough space
+       to let panel tags breathe while
+       not making it feel too spaced-out.
+    */
+    padding-top: $spacing-unit * (3 / 4);
     /*
       Minima's Markdown already comes with
       ($spacing-unit / 2) padding-bottom
-      for 'visual rhythm'.
+      for 'visual rhythm', but I need the
+      extra 1/4 here for symmetry.
     */
-    padding-bottom: 0;
+    padding-bottom: ($spacing-unit * (1 / 4));
     padding-left: $spacing-unit;
     padding-right: $spacing-unit;
 }

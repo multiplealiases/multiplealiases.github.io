@@ -7,7 +7,7 @@ params:
 permalink: /anywhere-you-go-everyone-wouldve-been-connected.html
 ---
 
-If applications were actively designed for
+Had applications been actively designed for
 asynchrony, rather than as a "neat trick" or a token effort.
 That they aren't, though, is... understandable.
 

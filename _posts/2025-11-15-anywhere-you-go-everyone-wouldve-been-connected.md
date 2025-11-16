@@ -392,6 +392,8 @@ I hope you thought this was an interesting read,
 even though I'm not sure how to recover from that 'splat!' of a sentence.
 Thank you.
 
+---
+
 # Footnotes
 
 [^cryptodunk]: While the green-plumbob[^naming] blockchain is,

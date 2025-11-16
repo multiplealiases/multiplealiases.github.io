@@ -404,10 +404,10 @@ Thank you.
     * it decentralizes data storage while centralizing authority,
 
     * its design cannot accomodate any participants but those with the money
-      to operate tens of terabytes of disk space, and
+      to operate tens of terabytes of disk space,
 
     * you (via proof-of-stake verification)
-      literally need money to make money.
+      literally need money to make money, and
 
     * it incentivizes people to act in wildly antisocial ways,
       arguably making it an antinetwork.

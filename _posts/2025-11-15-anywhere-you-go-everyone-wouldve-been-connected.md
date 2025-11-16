@@ -215,7 +215,7 @@ Your device likely has some amount of storage remaining
 that you'll have a hard time making use of.
 It's just there. Doing nothing.
 While some people do stuff that chomps through
-disk space like nothing else (e.g. games, video)
+disk space like nothing else (e.g. games, video),
 lots of people don't.
 Lots of devices
 will continue to have 400 GB free out of 512 throughout

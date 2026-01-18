@@ -20,7 +20,7 @@ Here's some fuel for that fire.
 <div class="altcontext" markdown="1">
 Heads-up: this post requires JavaScript to render the fancy visualizations.
 It's also why this post loads slower than my other blog posts
-(even with compression, I measure about 300 kB transferred).
+(even with compression, I measure about 400 kB transferred).
 If you have any ideas, either for no-JS compat or making the on-the-wire size smaller,
 poke me with them.
 </div>

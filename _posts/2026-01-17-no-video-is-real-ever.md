@@ -288,7 +288,7 @@ under Creative Commons Zero v1.0 Universal.
 If I may dunk a little bit:
 I wrote the Vega-Lite specs entirely using my brain, my two hands, and the Vega-Lite docs.
 **Zero** AI was involved in the creation of these specs.
-No chatbots were passed a prompt, nor were any websites ending in `.ai` looked at.
+I did not pass any chatbots a prompt, nor did I look at websites ending in `.ai`.
 They should be clean with respect to copyright,
 because **I** wrote them.
 

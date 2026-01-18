@@ -267,11 +267,13 @@ ffmpeg -nostats -hide_banner -i "$file" -i "$output" -map_metadata -1 -map_chapt
 # SPDX-License-Identifier: CC0-1.0
 
 # Runs all combinations shown in the article.
-parallel -q -j1 --lb ./run-svtav1-bench "$1" {1} {2} {3} ::: 18 50 23 28 35 38 42 25 32 36 40 19 20 21 22 24 26 27 29 30 31 33 34 37 39 41 43 44 45 46 47 48 49 ::: {4..10} ::: 480
+parallel -q -j1 --lb ./run-svtav1-bench.sh "$1" {1} {2} {3} ::: 18 50 23 28 35 38 42 25 32 36 40 19 20 21 22 24 26 27 29 30 31 33 34 37 39 41 43 44 45 46 47 48 49 ::: {4..10} ::: 480
 
-parallel -q -j1 --lb ./run-svtav1-bench "$1" {1} {2} {3} ::: 18 50 23 28 35 38 42 25 32 36 40 19 20 21 22 24 26 27 29 30 31 33 34 37 39 41 43 44 45 46 47 48 49 ::: {4..10} ::: 720
+parallel -q -j1 --lb ./run-svtav1-bench.sh "$1" {1} {2} {3} ::: 18 50 23 28 35 38 42 25 32 36 40 19 20 21 22 24 26 27 29 30 31 33 34 37 39 41 43 44 45 46 47 48 49 ::: {4..10} ::: 720
 
-parallel -q -j1 --lb ./run-svtav1-bench "$1" {1} {2} {3} ::: 18 50 23 28 35 38 42 25 32 36 40 19 20 21 22 24 26 27 29 30 31 33 34 37 39 41 43 44 45 46 47 48 49 ::: {4..10} ::: 1080
+# You might want to hold off on doing 1080p plots.
+# The results aren't all that different
+# parallel -q -j1 --lb ./run-svtav1-bench.sh "$1" {1} {2} {3} ::: 18 50 23 28 35 38 42 25 32 36 40 19 20 21 22 24 26 27 29 30 31 33 34 37 39 41 43 44 45 46 47 48 49 ::: {4..10} ::: 1080
 ```
 
 Place these files into a new directory, and make `log/` under it.

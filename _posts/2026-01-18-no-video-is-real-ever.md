@@ -17,6 +17,14 @@ high-quality/lossless content
 down to sizes that mere mortals can actually store and share.
 Here's some fuel for that fire.
 
+<div class="altcontext" markdown="1">
+Heads-up: this post requires JavaScript to render the fancy visualizations.
+It's also why this post loads slower than my other blog posts
+(even with compression, I measure about 300 kB transferred).
+If you have any ideas, either for no-JS compat or making the on-the-wire size smaller,
+poke me with them.
+</div>
+
 # Why?
 
 Within the fine art of SVT-AV1 transcoding,
@@ -137,7 +145,7 @@ VMAF 95/92 ("less forgiving"), looks like.
 You might've noticed it at park_joy, but notice how Preset 9 and 10
 produce a "jump" in the VMAF curves,
 that's to say, you get substantially worse quality for the same CRF.
-it seems like the fastest worthwhile Preset is 8.
+It seems like the fastest worthwhile Preset is 8.
 
 `film-grain` might be useful in these situations.
 

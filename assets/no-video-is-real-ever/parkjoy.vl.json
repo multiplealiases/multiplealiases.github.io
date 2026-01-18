@@ -1,0 +1,133 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "/assets/no-video-is-real-ever/parkjoy.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {
+    "text": ["Output quality of 10-bit SVT-AV1", "over encoder preset and CRF"],
+    "subtitle": ["'park_joy' sequence, via media.xiph.org", "standard reference material"]
+  },
+  "width": "container",
+  "height": 450,
+  "encoding": {
+    "x": {
+      "field": "preset",
+      "type": "nominal",
+      "sort": ["4", "5", "6", "7", "8", "9", "10"],
+      "axis": {"orient": "top", "labelAngle": 0}
+    },
+    "y": {"field": "crf", "title": "CRF", "type": "nominal"},
+    "color": {
+      "aggregate": "mean",
+      "field": "vmaf",
+      "type": "quantitative",
+      "scale": {
+        "domain": [{"expr": "extent_vmaf[0]"}, 92, 95, 100],
+        "scheme": "redyellowgreen"
+      },
+      "legend": {
+        "values": [{"expr": "extent_vmaf[0]"}, 92, 95, 100],
+        "title": "VMAF"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "rect"},
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "test": {
+              "or": [
+                {"field": "vmaf", "range": [94.5, 95.5]},
+                {"field": "vmaf", "range": [91.5, 92.5]}
+              ]
+            },
+            "value": 0.5
+          }
+        },
+        "strokeOpacity": {
+          "condition": {
+            "test": {
+              "or": [
+                {"field": "vmaf", "range": [94.5, 95.5]},
+                {"field": "vmaf", "range": [91.5, 92.5]}
+              ]
+            },
+            "value": 1
+          },
+          "value": 0
+        },
+        "stroke": {"value": "white"},
+        "tooltip": [
+          {"field": "crf", "type": "nominal", "title": "CRF"},
+          {"field": "preset", "type": "nominal"},
+          {
+            "field": "vmaf",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "VMAF"
+          },
+          {
+            "field": "bitrate",
+            "type": "quantitative",
+            "title": "bitrate (kbit/s)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "bitrateB", "type": "quantitative", "format": ".2s"},
+        "color": {"value": "black"},
+        "opacity": {
+          "value": 0,
+          "condition": {
+            "value": 1,
+            "test": {
+              "or": [
+                {"field": "vmaf", "range": [94.5, 95.5]},
+                {"field": "vmaf", "range": [91.5, 92.5]}
+              ]
+            }
+          }
+        }
+      },
+      "tooltip": [
+        {"field": "crf", "type": "nominal", "title": "CRF"},
+        {"field": "preset", "type": "nominal"},
+        {
+          "field": "vmaf",
+          "type": "quantitative",
+          "format": ".2f",
+          "title": "VMAF"
+        },
+        {
+          "field": "bitrate",
+          "type": "quantitative",
+          "title": "bitrate (kbit/s)"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "selected_resolution",
+      "value": 720,
+      "bind": {
+        "name": "Resolution",
+        "input": "select",
+        "options": [480, 720, 1080]
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.res == selected_resolution"},
+    {"extent": "vmaf", "param": "extent_vmaf"},
+    {"calculate": "datum.bitrate / 1024", "as": "bitrateM"},
+    {"calculate": "datum.bitrate * 1024", "as": "bitrateB"}
+  ],
+  "usermeta": {"embedOptions": {"actions": false}}
+}

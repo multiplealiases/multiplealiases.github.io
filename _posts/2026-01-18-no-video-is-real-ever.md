@@ -3,7 +3,7 @@ layout: post
 title: "No Video Is Real Ever"
 params:
     license: CC-BY-4.0
-date: 2026-01-17
+date: 2026-01-18
 permalink: /no-video-is-real-ever.html
 custom_js:
     - vega-6

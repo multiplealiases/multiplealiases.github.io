@@ -151,6 +151,14 @@ It seems like the fastest worthwhile Preset is 8.
 
 <viz id="national-park-viz"></viz>
 
+# '[BODY THE PISTOL](https://www.youtube.com/watch?v=rsaQsHxu4LU)' by Femtanyl
+
+And you can pack even more detail into videos, yielding...
+pathologically unencodable video.
+Poor presets 9 and 10, they can't even reach VMAF 95 at CRF 18.
+
+<viz id="body-the-pistol-viz"></viz>
+
 # '[Trophy](https://www.youtube.com/watch?v=_T9uppDEzc8)' by Crumb
 
 Low-light seems to also produce less forgiving videos.
@@ -356,4 +364,9 @@ because **I** wrote them.
 <script type="text/javascript">
   var spec = '/assets/no-video-is-real-ever/human.vl.json';
   vegaEmbed('#human-viz', spec)
+</script>
+
+<script type="text/javascript">
+  var spec = '/assets/no-video-is-real-ever/body-the-pistol.vl.json';
+  vegaEmbed('#body-the-pistol-viz', spec)
 </script>

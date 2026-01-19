@@ -224,6 +224,13 @@ Svt[info]: LIB Build date: Aug 28 2025 13:59:13
 Svt[info]: -------------------------------------------
 ```
 
+```
+$ ffmpeg -h filter=libvmaf
+libvmaf AVOptions:
+   (...)
+   model             <string>     ..FV....... Set the model to be used for computing vmaf. (default "version=vmaf_v0.6.1")
+```
+
 
 Have the scripts I used for this:
 

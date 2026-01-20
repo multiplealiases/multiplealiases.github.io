@@ -331,6 +331,8 @@ because **I** wrote them.
 
 * [human.csv](/assets/no-video-is-real-ever/human.csv), [human.vl.json](/assets/no-video-is-real-ever/human.vl.json)
 
+* [body-the-pistol.csv](/assets/no-video-is-real-ever/body-the-pistol.csv), [body-the-pistol.vl.json](/assets/no-video-is-real-ever/body-the-pistol.vl.json)
+
 <script type="text/javascript">
   var spec = '/assets/no-video-is-real-ever/national-park.vl.json';
   vegaEmbed('#national-park-viz', spec)

@@ -187,7 +187,7 @@ but preset seems to have a lot of influence this time.
 
 <viz id="art-student-eats-ai-art-viz"></viz>
 
-# '[meow mix](https://www.youtube.com/watch?v=4lBvkbtBYjU)' by meowballz
+# '[meow mix](https://www.youtube.com/watch?v=GiaD7WSdb4M)' by meowballz
 
 I expected this video to be a lot less forgiving,
 but maybe it triggers frequent intra refreshes or something.

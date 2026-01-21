@@ -176,9 +176,16 @@ Relatively forgiving.
 
 # '[BAD PIGGIES](https://www.youtube.com/watch?v=wirwlJo9fYY)' by InstrumentManiac
 
-It seems like rapid cuts between scenes tends to produce very "forgiving" video.
+It seems like rapid cuts between scenes tends to produce very forgiving video.
 
 <viz id="bad-piggies-viz"></viz>
+
+# '[Art student protests other student’s AI art: he eats it](https://www.youtube.com/watch?v=ViGMZCIq71Y)' by Pivot to AI
+
+And static 'talking head' content, too, is forgiving,
+but preset seems to have a lot of influence this time.
+
+<viz id="art-student-eats-ai-art-viz"></viz>
 
 # '[meow mix](https://www.youtube.com/watch?v=4lBvkbtBYjU)' by meowballz
 
@@ -371,4 +378,9 @@ because **I** wrote them.
 <script type="text/javascript">
   var spec = '/assets/no-video-is-real-ever/body-the-pistol.vl.json';
   vegaEmbed('#body-the-pistol-viz', spec)
+</script>
+
+<script type="text/javascript">
+  var spec = '/assets/no-video-is-real-ever/art-student-eats-ai-art.vl.json';
+  vegaEmbed('#art-student-eats-ai-art-viz', spec)
 </script>

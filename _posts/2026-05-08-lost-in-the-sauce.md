@@ -5,9 +5,10 @@ params:
     license: CC-BY-4.0
 date: 2026-05-08
 permalink: /lost-in-the-sauce.html
+excerpt: "Getting 'lost in the sauce' is both easy and hard."
 ---
 
-Dan Luu's [95%-ile isn't that good](https://danluu.com/p95-skill/) 
+Dan Luu's [95%-ile isn't that good](https://danluu.com/p95-skill/)
 makes the point that it's actually quite easy to
 reach what amounts to baseline competence,
 at least if your meta-strats about
@@ -48,12 +49,12 @@ and e.g. knowing how to program in C on PCs
 will aid you in embedded programming.
 
 * **mentors (or just people to talk to)**: it helps to have friends
-and communities who are motivated, 
+and communities who are motivated,
 and moreso people who know their stuff
 and can guide you through the learning process.
 "pulling yourself up by your bootstraps" is a joke and a fiction.
 
-But there's a lot of structural Stuff 
+But there's a lot of structural Stuff
 that makes *having* these advantages difficult.
 
 ## Formative experiences
@@ -100,18 +101,18 @@ all of this is just luck, all of this is just *trying*, and
 while there's a lot of value in trying,
 that's also a genuinely difficult process.
 And that's just online, where the borders are a lot lower compared to IRL;
-depending on where you are, 
+depending on where you are,
 the real world can and does disadvantage queer people.
 There's a whole lot of back-and-forth possible on that topic.
 
 ## Sometimes it's just not a focus.
 
-I feel that (tech) elitism runs on the base assumption that 
-everyone can, should, and must care 
+I feel that (tech) elitism runs on the base assumption that
+everyone can, should, and must care
 about everything the elitist cares about.
 While, it's probably a good idea to know things,
 it's also just not in the cards for a lot of people.
-Time, will, energy: those are all limited resources 
+Time, will, energy: those are all limited resources
 and people are free to choose what they focus on.
 Of course, everyone is entitled to caring about things,
 but it is surely not within our rights to demand that everyone care.
@@ -120,10 +121,10 @@ This "style" of advocacy,
 where we simply demand things out of people,
 instead of trying to meet people where they are, isn't *good* for us.
 I have no love for the FSF[^rms-note] for this reason;
-in its 40 years, 
+in its 40 years,
 why has it not advocated for broader-scope things like
 digital literacy, education, UI/UX, and so on?
-While software freedom is one piece of the puzzle, 
+While software freedom is one piece of the puzzle,
 it's silly to only think about software freedom
 while ignoring all the other dimensions of the problem.
 
@@ -138,7 +139,7 @@ usually this is through the medium of competition.
 While, yes, feeling good about being competitive is good,
 someone has to lose for there to be a competition.
 And yes, maybe I'm outing myself as a sensitive person, but
-I don't feel good either way. 
+I don't feel good either way.
 *Someone else* had to lose or *I* had to lose.
 
 Competition is ingrained into how we,
@@ -164,7 +165,7 @@ I do believe in the power of people.
 People have all sorts of different strengths and weaknesses
 and to be laser-focused on just one dimension of this many-dimensional
 space is to doom yourself, I feel.
-It is to say that people only matter 
+It is to say that people only matter
 if they're useful to you specifically, and...
 I'm sorry, that's a shitty thing to put onto people.
 
@@ -172,10 +173,10 @@ I'm sorry, that's a shitty thing to put onto people.
 
 # Footnotes
 
-[^rms-note]: Richard Stallman is someone with a highly dubious track record 
-	with respect to women and children, 
+[^rms-note]: Richard Stallman is someone with a highly dubious track record
+	with respect to women and children,
 	to be clear, so maybe the ineffectual RMS we got
-	is better than a hypothetical effective RMS, but... man. 
+	is better than a hypothetical effective RMS, but... man.
 	It's sad.
 
 [^one-of-those-friends]: If you are one of those friends, hi!
